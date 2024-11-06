@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Retrieve product details from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id');
+    const productId = String(urlParams.get('id'));
+    console.log("productId in productDetails Page" + productId);
     const productImage = urlParams.get('image');
     const productTitle = decodeURIComponent(urlParams.get('title'));
     const productDescription = decodeURIComponent(urlParams.get('description'));
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Check current quantity in cart and update the display
         const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        const existingItem = cartItems.find(item => item.id === String(productId));
+        const existingItem = cartItems.find(item => item.id === productId);
         let quantity = existingItem ? existingItem.quantity : 1; // Set to existing quantity or 1
 
         // Display initial quantity
@@ -36,18 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        document.getElementById('add-to-cart').addEventListener('click', (i) => {
-
-            console.log(i);
-
+        document.getElementById('add-to-cart').addEventListener('click', () => {
 
             const IncQuanCartItem = JSON.parse(localStorage.getItem('cartItems')) || [];
-            console.log('IncQuanCartItem');
-            console.log(IncQuanCartItem);
-            // let CurrItemOfQuan = IncQuanCartItem.length;
-            // console.log(CurrItemOfQuan);
             console.log("IncQuanCartItem in the Product Details.js" + IncQuanCartItem);
-            const result = addToCart(productId, productImage, productPrice, productTitle, quantity);
+            const result = addToCart(String(productId), productImage, productPrice, productTitle, quantity);
 
             if (result.newlyAdded) {
                 showPopup('Product added to cart!');

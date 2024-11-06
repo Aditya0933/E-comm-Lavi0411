@@ -58,7 +58,7 @@ function addToCart(id, img, price, title) {
     if (existingItem) {
         existingItem.quantity += 1; // Increase quantity if item already exists
     } else {
-        cartItems.push({ id, img, price: Number(price), title, quantity: 1 });
+        cartItems.push({ id:String(id), img, price: Number(price), title, quantity: 1 });
     }
 
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
@@ -69,7 +69,7 @@ function addToCart(id, img, price, title) {
         showPopup(); // Show popup only for new items
     }
 }
-
+    
 // Update Cart Count Function
 function updateCartCount(cartItems) {
     // const totalCount = cartItems.reduce((total, item) => total + item.quantity, 0);
