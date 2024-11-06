@@ -1,5 +1,3 @@
-
-
 let renderData = document.querySelector(".renderData");
 
 // Fetch Products
@@ -69,9 +67,9 @@ function addToCart(id, img, price, title) {
         showPopup(); // Show popup only for new items
     }
 }
-    
+
 // Update Cart Count Function
-function updateCartCount(cartItems) {
+function updateCartCount(cartItems) {  
     // const totalCount = cartItems.reduce((total, item) => total + item.quantity, 0);
     const cartAllItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     console.log(cartAllItems);
