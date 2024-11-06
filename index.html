@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="icon" href="./Image/e-commerce-logo.png" type="image/png">
+    <style>
+        /* Additional CSS for navbar styling */
+        .navbar-nav {
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .nav-link {
+            color: white;
+            /* margin: 20px; */
+            position: relative;
+            font-size: 12px;
+            /* Default font size */
+        }
+
+        .nav-link:hover {
+            font-size: 15px;
+            /* Hover font size */
+            color: white;
+        }
+
+        .nav-link:hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: orange;
+            bottom: -5px;
+            /* Adjust as needed */
+            left: 0;
+            right: 0;
+        }
+
+        /* Fixing navbar for mobile view */
+
+        /* Mobile view adjustments */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                flex-direction: column;
+                /* Stack menu items vertically */
+                align-items: center;
+                /* Center the items */
+            }
+
+            .nav-link {
+                text-align: center;
+                /* Center text in mobile */
+                padding: 10px 0;
+                /* Add padding for better spacing */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="Container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-#8A7AB9 fixed-top"
+            style="background-color: #8A7AB9; border-bottom: transparent;" id="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <p style="color: WHITE; font-weight: 850; font-size: 25px;">SKIPLINE</p>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">SHOP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./cart.html">CART <i class="fa-solid fa-cart-shopping"></i> <span
+                                    class="cart-count" id="cart-count">0</span></a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button id="btn_hover" class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel"> <!-- Space for fixed navbar -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://api.asm.skype.com/v1/objects/0-jhb-d2-2899dba58ef085240474468985f72c5c/views/imgpsh_fullsize_anim"
+                        class="d-block w-100" alt="First slide">
+                </div>
+            </div>
+        </div>
+
+        <div class="marquee-container">
+            <marquee behavior="scroll" direction="left" scrollamount="8">
+                🌟Men's ShowCase! | Free Shipping on orders over $50! | New Arrivals Daily!
+            </marquee>
+        </div>
+
+        <div class="Shop_Box">
+            <h1>Clothes Showcase</h1>
+        </div>
+
+        <div class="main-container">
+            <div class="renderData"></div>
+        </div>
+
+        <footer class="text-center text-lg-start text-white" style="background-color: #8A7AB9;">
+            <div class="container p-4 pb-0">
+                <section>
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                            <img src="./Image/f5e884102732761.5f3d3d9493dd6-removebg-preview.png" alt="Logo"
+                                style="width: 100px; height: 70; margin-bottom: 6px;">
+                            <h6 class="text-uppercase mb-4 font-weight-bold">SKIPLINE</h6>
+                            <p>Here you can use rows and columns to organize your footer content.</p>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h6 class="text-uppercase mb-4 font-weight-bold fs-5">CUSTOMER SERVICE</h6>
+                            <p><a class="text-white" href="#">REFUND POLICY</a></p>
+                            <p><a class="text-white" href="#">ABOUT</a></p>
+                            <p><a class="text-white" href="./signin.html">MY ACCOUNT</a></p>
+                            <p><a class="text-white" href="#">CONTACT US</a></p>
+                        </div>
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                            <h6 class="text-uppercase mb-4 font-weight-bold fs-5">Contact</h6>
+                            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+                            <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+                            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                        </div>
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h6 class="text-uppercase mb-4 font-weight-bold fs-5">Follow us</h6>
+                            <a class="btn btn-primary btn-floating m-1 social-icon" style="background-color: #3b5998"
+                                href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-primary btn-floating m-1 social-icon" style="background-color: #55acee"
+                                href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-primary btn-floating m-1 social-icon" style="background-color: #dd4b39"
+                                href="#!"><i class="fab fa-google"></i></a>
+                            <a class="btn btn-primary btn-floating m-1 social-icon" style="background-color: #ac2bac"
+                                href="#!"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-primary btn-floating m-1 social-icon" style="background-color: #0082ca"
+                                href="#!"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-primary btn-floating m-1 social-icon" style="background-color: #333333"
+                                href="#!"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                © 2020 Copyright: <a class="text-white" href="./index.html">SKIPLINE.com</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
