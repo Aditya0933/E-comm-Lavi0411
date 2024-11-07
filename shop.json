@@ -1,0 +1,417 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Electronics",
+            "description": "Devices, gadgets, and accessories",
+            "subcategories": [
+                {
+                    "id": 101,
+                    "name": "Mobile Phones",
+                    "description": "Smartphones and accessories",
+                    "items": [
+                        {
+                            "id": 1001,
+                            "name": "iPhone 13",
+                            "price": 999,
+                            "description": "Apple iPhone 13, 128GB, Blue",
+                            "image": "https://images.pexels.com/photos/3761504/pexels-photo-3761504.jpeg"
+                        },
+                        {
+                            "id": 1002,
+                            "name": "Samsung Galaxy S21",
+                            "price": 799,
+                            "description": "Samsung Galaxy S21, 128GB, Phantom Gray",
+                            "image": "https://images.pexels.com/photos/1161873/pexels-photo-1161873.jpeg"
+                        },
+                        {
+                            "id": 1003,
+                            "name": "Google Pixel 6",
+                            "price": 699,
+                            "description": "Google Pixel 6, 128GB, Stormy Black",
+                            "image": "https://images.pexels.com/photos/4592258/pexels-photo-4592258.jpeg"
+                        },
+                        {
+                            "id": 1004,
+                            "name": "OnePlus 9",
+                            "price": 729,
+                            "description": "OnePlus 9, 128GB, Morning Mist",
+                            "image": "https://images.pexels.com/photos/1831404/pexels-photo-1831404.jpeg"
+                        }
+                    ]
+                },
+                {
+                    "id": 102,
+                    "name": "Laptops",
+                    "description": "Laptops for personal and professional use",
+                    "items": [
+                        {
+                            "id": 2001,
+                            "name": "MacBook Pro M1",
+                            "price": 1299,
+                            "description": "Apple MacBook Pro M1, 13-inch, 8GB RAM, 256GB SSD",
+                            "image": "https://images.pexels.com/photos/4065678/pexels-photo-4065678.jpeg"
+                        },
+                        {
+                            "id": 2002,
+                            "name": "Dell XPS 13",
+                            "price": 999,
+                            "description": "Dell XPS 13, Intel Core i7, 16GB RAM, 512GB SSD",
+                            "image": "https://images.pexels.com/photos/3737988/pexels-photo-3737988.jpeg"
+                        },
+                        {
+                            "id": 2003,
+                            "name": "HP Spectre x360",
+                            "price": 1199,
+                            "description": "HP Spectre x360, 13.3-inch, Intel Core i7, 16GB RAM",
+                            "image": "https://images.pexels.com/photos/5662247/pexels-photo-5662247.jpeg"
+                        },
+                        {
+                            "id": 2004,
+                            "name": "Lenovo ThinkPad X1",
+                            "price": 1499,
+                            "description": "Lenovo ThinkPad X1 Carbon, 14-inch, Intel Core i7",
+                            "image": "https://images.pexels.com/photos/3823495/pexels-photo-3823495.jpeg"
+                        }
+                    ]
+                },
+                {
+                    "id": 103,
+                    "name": "Cameras",
+                    "description": "Digital and DSLR cameras",
+                    "items": [
+                        {
+                            "id": 3001,
+                            "name": "Canon EOS 90D",
+                            "price": 1199,
+                            "description": "Canon EOS 90D DSLR Camera, 32.5 MP, 4K Video",
+                            "image": "https://images.pexels.com/photos/1161873/pexels-photo-1161873.jpeg"
+                        },
+                        {
+                            "id": 3002,
+                            "name": "Nikon D850",
+                            "price": 2799,
+                            "description": "Nikon D850 DSLR Camera, 45.7 MP, 4K Video",
+                            "image": "https://images.pexels.com/photos/2610130/pexels-photo-2610130.jpeg"
+                        },
+                        {
+                            "id": 3003,
+                            "name": "Sony A7 III",
+                            "price": 1999,
+                            "description": "Sony A7 III Mirrorless Camera, 24.2 MP, 4K Video",
+                            "image": "https://images.pexels.com/photos/1194795/pexels-photo-1194795.jpeg"
+                        },
+                        {
+                            "id": 3004,
+                            "name": "Fujifilm X-T4",
+                            "price": 1699,
+                            "description": "Fujifilm X-T4 Mirrorless Camera, 26.1 MP, 4K Video",
+                            "image": "https://images.pexels.com/photos/2078464/pexels-photo-2078464.jpeg"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Fashion",
+            "description": "Clothing and accessories",
+            "subcategories": [
+                {
+                    "id": 201,
+                    "name": "Men's Clothing",
+                    "description": "Fashion for men",
+                    "items": [
+                        {
+                            "id": 4001,
+                            "name": "Slim Fit Shirt",
+                            "price": 49.99,
+                            "description": "Slim fit shirt for men, size M, navy blue",
+                            "image": "https://images.pexels.com/photos/1530727/pexels-photo-1530727.jpeg"
+                        },
+                        {
+                            "id": 4002,
+                            "name": "Leather Jacket",
+                            "price": 199.99,
+                            "description": "Men's leather jacket, size L, black",
+                            "image": "https://images.pexels.com/photos/1591737/pexels-photo-1591737.jpeg"
+                        },
+                        {
+                            "id": 4003,
+                            "name": "Chinos Pants",
+                            "price": 59.99,
+                            "description": "Men's chinos pants, size 32, beige",
+                            "image": "https://images.pexels.com/photos/2771005/pexels-photo-2771005.jpeg"
+                        },
+                        {
+                            "id": 4004,
+                            "name": "Casual Sneakers",
+                            "price": 79.99,
+                            "description": "Men's casual sneakers, size 10, white",
+                            "image": "https://images.pexels.com/photos/1704129/pexels-photo-1704129.jpeg"
+                        }
+                    ]
+                },
+                {
+                    "id": 202,
+                    "name": "Women's Clothing",
+                    "description": "Fashion for women",
+                    "items": [
+                        {
+                            "id": 5001,
+                            "name": "Floral Dress",
+                            "price": 89.99,
+                            "description": "Women's floral dress, size M, pink",
+                            "image": "https://images.pexels.com/photos/1612712/pexels-photo-1612712.jpeg"
+                        },
+                        {
+                            "id": 5002,
+                            "name": "Wool Sweater",
+                            "price": 49.99,
+                            "description": "Women's wool sweater, size M, beige",
+                            "image": "https://images.pexels.com/photos/5671169/pexels-photo-5671169.jpeg"
+                        },
+                        {
+                            "id": 5003,
+                            "name": "Denim Skirt",
+                            "price": 39.99,
+                            "description": "Women's denim skirt, size M, blue",
+                            "image": "https://images.pexels.com/photos/2226175/pexels-photo-2226175.jpeg"
+                        },
+                        {
+                            "id": 5004,
+                            "name": "Pointed Heels",
+                            "price": 59.99,
+                            "description": "Women's pointed heels, size 8, black",
+                            "image": "https://images.pexels.com/photos/1577162/pexels-photo-1577162.jpeg"
+                        }
+                    ]
+                },
+                {
+                    "id": 203,
+                    "name": "Kids' Clothing",
+                    "description": "Clothing for kids",
+                    "items": [
+                        {
+                            "id": 6001,
+                            "name": "Boys T-shirt",
+                            "price": 15.99,
+                            "description": "Boys' T-shirt, size 8, blue",
+                            "image": "https://images.pexels.com/photos/3559014/pexels-photo-3559014.jpeg"
+                        },
+                        {
+                            "id": 6002,
+                            "name": "Girls Dress",
+                            "price": 25.99,
+                            "description": "Girls' dress, size 10, pink",
+                            "image": "https://images.pexels.com/photos/4592258/pexels-photo-4592258.jpeg"
+                        },
+                        {
+                            "id": 6003,
+                            "name": "Kids Sneakers",
+                            "price": 29.99,
+                            "description": "Kids' sneakers, size 3, red",
+                            "image": "https://images.pexels.com/photos/3823495/pexels-photo-3823495.jpeg"
+                        },
+                        {
+                            "id": 6004,
+                            "name": "Boys Jeans",
+                            "price": 19.99,
+                            "description": "Boys' jeans, size 10, blue",
+                            "image": "https://images.pexels.com/photos/3501003/pexels-photo-3501003.jpeg"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Home Appliances",
+            "description": "Appliances for home use",
+            "subcategories": [
+                {
+                    "id": 301,
+                    "name": "Refrigerators",
+                    "description": "Fridges for keeping food fresh",
+                    "items": [
+                        {
+                            "id": 7001,
+                            "name": "LG Refrigerator",
+                            "price": 499.99,
+                            "description": "LG Double Door Refrigerator, 340L",
+                            "image": "https://images.pexels.com/photos/4460179/pexels-photo-4460179.jpeg"
+                        },
+                        {
+                            "id": 7002,
+                            "name": "Samsung Refrigerator",
+                            "price": 799.99,
+                            "description": "Samsung French Door Refrigerator, 500L",
+                            "image": "https://images.pexels.com/photos/4545452/pexels-photo-4545452.jpeg"
+                        },
+                        {
+                            "id": 7003,
+                            "name": "Whirlpool Refrigerator",
+                            "price": 649.99,
+                            "description": "Whirlpool Side by Side Refrigerator, 340L",
+                            "image": "https://images.pexels.com/photos/1181255/pexels-photo-1181255.jpeg"
+                        },
+                        {
+                            "id": 7004,
+                            "name": "Haier Refrigerator",
+                            "price": 399.99,
+                            "description": "Haier Top Freezer Refrigerator, 250L",
+                            "image": "https://images.pexels.com/photos/2472805/pexels-photo-2472805.jpeg"
+                        }
+                    ]
+                },
+                {
+                    "id": 302,
+                    "name": "Washing Machines",
+                    "description": "Machines for washing clothes",
+                    "items": [
+                        {
+                            "id": 8001,
+                            "name": "Samsung Washing Machine",
+                            "price": 399.99,
+                            "description": "Samsung Front Load Washing Machine, 7kg",
+                            "image": "https://images.pexels.com/photos/4457805/pexels-photo-4457805.jpeg"
+                        },
+                        {
+                            "id": 8002,
+                            "name": "LG Washing Machine",
+                            "price": 499.99,
+                            "description": "LG Top Load Washing Machine, 9kg",
+                            "image": "https://images.pexels.com/photos/3554489/pexels-photo-3554489.jpeg"
+                        },
+                        {
+                            "id": 8003,
+                            "name": "Whirlpool Washing Machine",
+                            "price": 399.99,
+                            "description": "Whirlpool Front Load Washing Machine, 6kg",
+                            "image": "https://images.pexels.com/photos/5670805/pexels-photo-5670805.jpeg"
+                        },
+                        {
+                            "id": 8004,
+                            "name": "Bosch Washing Machine",
+                            "price": 799.99,
+                            "description": "Bosch Front Load Washing Machine, 8kg",
+                            "image": "https://images.pexels.com/photos/3507431/pexels-photo-3507431.jpeg"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Sports & Outdoors",
+            "description": "Sports gear and outdoor equipment",
+            "subcategories": [
+                {
+                    "id": 401,
+                    "name": "Sports Equipment",
+                    "description": "Sports gear and accessories",
+                    "items": [
+                        {
+                            "id": 9001,
+                            "name": "Basketball",
+                            "price": 29.99,
+                            "description": "Official size basketball, orange",
+                            "image": "https://images.pexels.com/photos/2777633/pexels-photo-2777633.jpeg"
+                        },
+                        {
+                            "id": 9002,
+                            "name": "Soccer Ball",
+                            "price": 19.99,
+                            "description": "Professional soccer ball, size 5",
+                            "image": "https://images.pexels.com/photos/1115016/pexels-photo-1115016.jpeg"
+                        },
+                        {
+                            "id": 9003,
+                            "name": "Tennis Racket",
+                            "price": 49.99,
+                            "description": "High-quality tennis racket, adult size",
+                            "image": "https://images.pexels.com/photos/1662423/pexels-photo-1662423.jpeg"
+                        },
+                        {
+                            "id": 9004,
+                            "name": "Baseball Glove",
+                            "price": 39.99,
+                            "description": "Leather baseball glove, right-hand throw",
+                            "image": "https://images.pexels.com/photos/2684907/pexels-photo-2684907.jpeg"
+                        }
+                    ]
+                },
+                {
+                    "id": 402,
+                    "name": "Outdoor Gear",
+                    "description": "Equipment for outdoor adventures",
+                    "items": [
+                        {
+                            "id": 10001,
+                            "name": "Camping Tent",
+                            "price": 99.99,
+                            "description": "4-person camping tent with waterproof cover",
+                            "image": "https://images.pexels.com/photos/5961749/pexels-photo-5961749.jpeg"
+                        },
+                        {
+                            "id": 10002,
+                            "name": "Hiking Backpack",
+                            "price": 69.99,
+                            "description": "Waterproof hiking backpack, 40L",
+                            "image": "https://images.pexels.com/photos/2091914/pexels-photo-2091914.jpeg"
+                        },
+                        {
+                            "id": 10003,
+                            "name": "Fishing Rod",
+                            "price": 49.99,
+                            "description": "Fishing rod with reel, 5ft",
+                            "image": "https://images.pexels.com/photos/1552181/pexels-photo-1552181.jpeg"
+                        },
+                        {
+                            "id": 10004,
+                            "name": "Sleeping Bag",
+                            "price": 39.99,
+                            "description": "Mummy sleeping bag, rated to 32°F",
+                            "image": "https://images.pexels.com/photos/3783030/pexels-photo-3783030.jpeg"
+                        }
+                    ]
+                },
+                {
+                    "id": 403,
+                    "name": "Fitness",
+                    "description": "Fitness gear and accessories",
+                    "items": [
+                        {
+                            "id": 11001,
+                            "name": "Dumbbells",
+                            "price": 29.99,
+                            "description": "Set of 2 dumbbells, 10 lbs each",
+                            "image": "https://images.pexels.com/photos/743850/pexels-photo-743850.jpeg"
+                        },
+                        {
+                            "id": 11002,
+                            "name": "Yoga Mat",
+                            "price": 19.99,
+                            "description": "Non-slip yoga mat, 6mm thickness",
+                            "image": "https://images.pexels.com/photos/3576123/pexels-photo-3576123.jpeg"
+                        },
+                        {
+                            "id": 11003,
+                            "name": "Resistance Bands",
+                            "price": 15.99,
+                            "description": "Set of 5 resistance bands for workouts",
+                            "image": "https://images.pexels.com/photos/743850/pexels-photo-743850.jpeg"
+                        },
+                        {
+                            "id": 11004,
+                            "name": "Jump Rope",
+                            "price": 9.99,
+                            "description": "Adjustable jump rope with ergonomic handles",
+                            "image": "https://images.pexels.com/photos/4992901/pexels-photo-4992901.jpeg"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

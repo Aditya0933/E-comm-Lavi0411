@@ -5,7 +5,7 @@ async function getData() {
     try {
         const res = await fetch("https://fakestoreapi.com/products");
         const data = await res.json();
-        console.log(data); // Debugging line to check the fetched data
+        // console.log(data); // Debugging line to check the fetched data
 
         data.forEach(ele => {
             let productMainDiv = document.createElement("div");
@@ -72,7 +72,7 @@ function addToCart(id, img, price, title) {
 function updateCartCount(cartItems) {  
     // const totalCount = cartItems.reduce((total, item) => total + item.quantity, 0);
     const cartAllItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    console.log(cartAllItems);
+    // console.log(cartAllItems);
     let totalCount = cartAllItems.length;
     document.getElementById('cart-count').textContent = totalCount > 0 ? totalCount : '0';
 }

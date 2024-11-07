@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <style>
+    /* Add your CSS styles for the product detail page */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .product-detail img {
+      width: 300px;
+      height: auto;
+    }
+    .product-specs, .product-reviews {
+      margin-top: 20px;
+    }
+    .product-specs ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .product-reviews .review {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="product-detail" class="product-detail">
+    <h1>Loading product details...</h1>
+  </div>
+
+  <script>
+    async function fetchProductDetail() {
+      const params = new URLSearchParams(window.location.search);
+      const productId = params.get('id');  // Get the 'id' query parameter from URL
+
+      try {
+        const response = await fetch('aditya.json'); // Fetch the product data
+        const data = await response.json();
+
+        // Find the product with the given ID
+        const product = data
+          .flatMap(category => category.products)
+          .find(p => p.id === productId);
+
+        if (product) {
+          renderProductDetail(product);
+        } else {
+          document.getElementById('product-detail').innerHTML = '<p>Product not found.</p>';
+        }
+      } catch (error) {
+        console.error('Error fetching product details:', error);
+        document.getElementById('product-detail').innerHTML = '<p>Error loading product details.</p>';
+      }
+    }
+
+    function renderProductDetail(product) {
+      const productDetailElement = document.getElementById('product-detail');
+      
+      productDetailElement.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <h1>${product.name}</h1>
+        <p>${product.description}</p>
+        <h3>Price: ${product.price}</h3>
+        
+        <!-- Specifications -->
+        <div class="product-specs">
+          <h3>Specifications:</h3>
+          <ul>
+            <li><strong>Brand:</strong> ${product.brand}</li>
+            <li><strong>Processor:</strong> ${product.specifications.processor}</li>
+            <li><strong>RAM:</strong> ${product.specifications.ram}</li>
+            <li><strong>Storage:</strong> ${product.specifications.storage}</li>
+            <li><strong>Battery:</strong> ${product.specifications.battery}</li>
+          </ul>
+        </div>
+
+        <!-- Reviews -->
+        <div class="product-reviews">
+          <h3>Reviews:</h3>
+          ${product.reviews.map(review => `
+            <div class="review">
+              <p><strong>${review.user}</strong> (${review.rating} stars):</p>
+              <p>${review.comment}</p>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    fetchProductDetail();
+  </script>
+
+</body>
+</html>

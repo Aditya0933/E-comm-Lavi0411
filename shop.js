@@ -1,64 +1,127 @@
-// let renderData = document.querySelector(".render");
+async function catagoryProductsItem() {
+    try {
+        const response = await fetch('shop.json');
+        const data = await response.json();
+        console.log('Fetched data:', data);
 
-// // Fetch Products
-// async function getData() {
-//     try {
-//         const res = await fetch("https://fakestoreapi.com/products");
-//         const data = await res.json();
+        // Assuming the array is inside a "categories" property
+        if (Array.isArray(data.categories)) {
+            data.categories.forEach(category => {
+                console.log("Category:", category);
 
-//         data.forEach(ele => {
-//             let productMainDiv = document.createElement("div");
-//             productMainDiv.classList.add("box-main");
+                // Get the container where we want to append all categories
+                let productAllCategory = document.getElementById("productAllCategory");
 
-//             let createImgEle = document.createElement("img");
-//             createImgEle.src = ele.image;
+                // Create the container for each category
+                let categoryContainer = document.createElement("div");
+                categoryContainer.classList.add("category-container");
 
-//             let createTitle = document.createElement("p");
-//             createTitle.classList.add("productTitle");
-//             createTitle.textContent = `${ele.title.slice(0, 35)}...`;
+                // Create the category heading container
+                let categoryContainerHeading = document.createElement("div");
+                categoryContainerHeading.classList.add("category-container-heading");
 
-//             let createPriceEle = document.createElement("p");
-//             createPriceEle.classList.add("price-element");
-//             createPriceEle.textContent = `Price: ₹${ele.price}`;
+                // Create the category title (h3)
+                let categoryTitle = document.createElement("h3");
+                categoryTitle.classList.add("category-title");
+                categoryTitle.textContent = category.name;  // Category Name
 
-//             let addToCartBtn = document.createElement("button");
-//             addToCartBtn.classList.add("btn-element");
-//             addToCartBtn.textContent = "Add to Cart";
-//             addToCartBtn.addEventListener("click", () => {
-//                 addToCart(ele.id, ele.image, ele.price, ele.title);
-//             });
+                // Create the arrow icon (SVG)
+                const arrowIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                arrowIcon.classList.add("arrow-icon");
+                arrowIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+                arrowIcon.setAttribute('viewBox', '0 0 16 16');
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path.setAttribute('d', 'M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z');
+                arrowIcon.appendChild(path);
 
-//             let productLink = document.createElement("a");
-//             productLink.href = `./productDetails.html?id=${ele.id}&title=${encodeURIComponent(ele.title)}&price=${ele.price}&image=${encodeURIComponent(ele.image)}&description=${encodeURIComponent(ele.description)}`;
-//             productLink.append(createImgEle);
+                // Append category title and arrow icon to the heading container
+                categoryContainerHeading.appendChild(categoryTitle);
+                categoryContainerHeading.appendChild(arrowIcon);
 
-//             productMainDiv.append(productLink, createTitle, createPriceEle, addToCartBtn);
-//             renderData.appendChild(productMainDiv);
-//         });
-//     } catch (error) {
-//         console.error("Error fetching data: ", error);
-//     }
-// }
+                // Append heading to category container
+                categoryContainer.appendChild(categoryContainerHeading);
 
-// // Add to Cart
-// function addToCart(id, img, price, title) {
-//     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-//     const existingItem = cartItems.find(item => item.id === id);
+                // Loop through subcategories
+                category.subcategories.forEach(subcategory => {
+                    // Create subcategory section
+                    let subcategoryContainer = document.createElement("div");
+                    subcategoryContainer.classList.add("subcategory-container");
 
-//     if (existingItem) {
-//         existingItem.quantity += 1;
-//     } else {
-//         cartItems.push({ id, img, price: Number(price), title, quantity: 1 });
-//     }
+                    // Subcategory title
+                    let subcategoryTitle = document.createElement("h4");
+                    subcategoryTitle.classList.add("subcategory-title");
+                    subcategoryTitle.textContent = subcategory.name;
 
-//     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-//     updateCartCount(cartItems);
-//     showPopup();
-// }
+                    let subcategoryDesc = document.createElement("p");
+                    subcategoryDesc.classList.add("subcategory-description");
+                    subcategoryDesc.textContent = subcategory.description;
 
-// // Update Cart Count
-// function updateCartCount(cartItems) {
-//     const totalCount = cartItems.reduce((total, item) => total + item.quantity, 0);
-//     document.getElementById('cart-count').textContent = totalCount > 0 ? totalCount : '0';
-// }
-// console.log("test")
+                    // Append subcategory title and description
+                    subcategoryContainer.appendChild(subcategoryTitle);
+                    subcategoryContainer.appendChild(subcategoryDesc);
+
+                    // Create a grid for items inside the subcategory
+                    let productGrid = document.createElement("div");
+                    productGrid.classList.add("product-grid");
+
+                    // Loop through items in subcategory
+                    subcategory.items.forEach(item => {
+                        let productItem = document.createElement("div");
+                        productItem.classList.add("product-item");
+
+                        // Product image container
+                        let productItemImg = document.createElement("div");
+                        productItemImg.classList.add("product-item-img");
+
+                        // Product image
+                        let img = document.createElement("img");
+                        img.setAttribute("src", item.image);
+                        img.setAttribute("alt", item.name);
+
+                        // Add image to the product item
+                        productItemImg.appendChild(img);
+
+                        // Product name and description
+                        let productName = document.createElement("span");
+                        productName.classList.add("product-name");
+                        productName.textContent = item.name;
+
+                        let productPrice = document.createElement("span");
+                        productPrice.classList.add("product-price");
+                        productPrice.textContent = `$${item.price}`;
+
+                        let productDesc = document.createElement("p");
+                        productDesc.classList.add("product-description");
+                        productDesc.textContent = item.description;
+
+                        // Append product name, price, and description to the product item
+                        productItem.appendChild(productItemImg);
+                        productItem.appendChild(productName);
+                        productItem.appendChild(productPrice);
+                        productItem.appendChild(productDesc);
+
+                        // Add the product item to the product grid
+                        productGrid.appendChild(productItem);
+                    });
+
+                    // Append product grid to the subcategory container
+                    subcategoryContainer.appendChild(productGrid);
+
+                    // Append the subcategory container to the category container
+                    categoryContainer.appendChild(subcategoryContainer);
+                });
+
+                // Append the category container to the main container
+                productAllCategory.appendChild(categoryContainer);
+            });
+        } else {
+            console.log('Categories is not an array:', data.categories);
+        }
+
+    } catch (error) {
+        console.log('Error in the catagoryProductsItem function in the Shop.js Page ...', error);
+    }
+}
+
+// Call the function to load categories and products
+catagoryProductsItem();

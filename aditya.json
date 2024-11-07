@@ -1,0 +1,106 @@
+[
+    {
+      "category": "Electronics",
+      "products": [
+        {
+          "id": "1",
+          "name": "Smartphone 1",
+          "description": "A great smartphone with excellent features.",
+          "image": "https://via.placeholder.com/200",
+          "price": "$500",
+          "brand": "Brand A",
+          "specifications": {
+            "processor": "Octa-core 2.0 GHz",
+            "ram": "4 GB",
+            "storage": "64 GB",
+            "battery": "4000 mAh"
+          },
+          "reviews": [
+            {
+              "user": "John Doe",
+              "rating": 4,
+              "comment": "Great value for the price."
+            },
+            {
+              "user": "Jane Smith",
+              "rating": 5,
+              "comment": "Absolutely love it!"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "name": "Smartphone 2",
+          "description": "Another great smartphone with powerful features.",
+          "image": "https://via.placeholder.com/200",
+          "price": "$600",
+          "brand": "Brand B",
+          "specifications": {
+            "processor": "Quad-core 2.5 GHz",
+            "ram": "6 GB",
+            "storage": "128 GB",
+            "battery": "4500 mAh"
+          },
+          "reviews": [
+            {
+              "user": "Alice Brown",
+              "rating": 3,
+              "comment": "Good, but could be better."
+            }
+          ]
+        }
+      ]
+    },
+    {
+        "category": "Electronics",
+        "products": [
+          {
+            "id": "3",
+            "name": "Smartphone 1",
+            "description": "A great smartphone with excellent features.",
+            "image": "https://via.placeholder.com/200",
+            "price": "$500",
+            "brand": "Brand A",
+            "specifications": {
+              "processor": "Octa-core 2.0 GHz",
+              "ram": "4 GB",
+              "storage": "64 GB",
+              "battery": "4000 mAh"
+            },
+            "reviews": [
+              {
+                "user": "John Doe",
+                "rating": 4,
+                "comment": "Great value for the price."
+              },
+              {
+                "user": "Jane Smith",
+                "rating": 5,
+                "comment": "Absolutely love it!"
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Smartphone 2",
+            "description": "Another great smartphone with powerful features.",
+            "image": "https://via.placeholder.com/200",
+            "price": "$600",
+            "brand": "Brand B",
+            "specifications": {
+              "processor": "Quad-core 2.5 GHz",
+              "ram": "6 GB",
+              "storage": "128 GB",
+              "battery": "4500 mAh"
+            },
+            "reviews": [
+              {
+                "user": "Alice Brown",
+                "rating": 3,
+                "comment": "Good, but could be better."
+              }
+            ]
+          }
+        ]
+      }
+  ]  
