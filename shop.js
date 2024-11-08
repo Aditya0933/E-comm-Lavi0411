@@ -1,20 +1,21 @@
+// THis is the shop.js file
+
 async function catagoryProductsItem() {
     try {
         const response = await fetch('shop.json');
         const data = await response.json();
-        console.log('Fetched data:', data);
 
         // Assuming the array is inside a "categories" property
         if (Array.isArray(data.categories)) {
-            data.categories.forEach(category => {
-                console.log("Category:", category);
+            // Get the container where we want to append all categories
+            let productAllCategory = document.getElementById("productAllCategory");
 
-                // Get the container where we want to append all categories
-                let productAllCategory = document.getElementById("productAllCategory");
+            data.categories.forEach(category => {
 
                 // Create the container for each category
                 let categoryContainer = document.createElement("div");
                 categoryContainer.classList.add("category-container");
+                categoryContainer.id = category.id;
 
                 // Create the category heading container
                 let categoryContainerHeading = document.createElement("div");
@@ -41,11 +42,15 @@ async function catagoryProductsItem() {
                 // Append heading to category container
                 categoryContainer.appendChild(categoryContainerHeading);
 
+                // Create a single container for all subcategories
+                let subcategoryContainer = document.createElement("div");
+                subcategoryContainer.classList.add("subcategory-container");
+
                 // Loop through subcategories
                 category.subcategories.forEach(subcategory => {
                     // Create subcategory section
-                    let subcategoryContainer = document.createElement("div");
-                    subcategoryContainer.classList.add("subcategory-container");
+                    let subcategorySection = document.createElement("div");
+                    subcategorySection.classList.add("subcategory-section");
 
                     // Subcategory title
                     let subcategoryTitle = document.createElement("h4");
@@ -57,8 +62,8 @@ async function catagoryProductsItem() {
                     subcategoryDesc.textContent = subcategory.description;
 
                     // Append subcategory title and description
-                    subcategoryContainer.appendChild(subcategoryTitle);
-                    subcategoryContainer.appendChild(subcategoryDesc);
+                    subcategorySection.appendChild(subcategoryTitle);
+                    subcategorySection.appendChild(subcategoryDesc);
 
                     // Create a grid for items inside the subcategory
                     let productGrid = document.createElement("div");
@@ -86,17 +91,33 @@ async function catagoryProductsItem() {
                         productName.classList.add("product-name");
                         productName.textContent = item.name;
 
+                        let br = document.createElement("br");
+
                         let productPrice = document.createElement("span");
                         productPrice.classList.add("product-price");
                         productPrice.textContent = `$${item.price}`;
 
                         let productDesc = document.createElement("p");
                         productDesc.classList.add("product-description");
-                        productDesc.textContent = item.description;
+
+                        // Set a limit on the number of characters (e.g., 100)
+                        let maxDescriptionLength = 20;
+
+                        // Check if the description length exceeds the max length
+                        if (item.description.length > maxDescriptionLength) {
+                            // If the description is too long, truncate it and add "..."
+                            productDesc.textContent = item.description.slice(0, maxDescriptionLength) + '...';
+                        } else {
+                            // If the description is short enough, show it fully
+                            productDesc.textContent = item.description;
+                        }
+
+
 
                         // Append product name, price, and description to the product item
                         productItem.appendChild(productItemImg);
                         productItem.appendChild(productName);
+                        productItem.appendChild(br);
                         productItem.appendChild(productPrice);
                         productItem.appendChild(productDesc);
 
@@ -104,15 +125,19 @@ async function catagoryProductsItem() {
                         productGrid.appendChild(productItem);
                     });
 
-                    // Append product grid to the subcategory container
-                    subcategoryContainer.appendChild(productGrid);
+                    // Append product grid to the subcategory section
+                    subcategorySection.appendChild(productGrid);
 
-                    // Append the subcategory container to the category container
-                    categoryContainer.appendChild(subcategoryContainer);
+                    // Append the subcategory section to the subcategory container
+                    subcategoryContainer.appendChild(subcategorySection);
                 });
+
+                // Append subcategory container to the category container
+                categoryContainer.appendChild(subcategoryContainer);
 
                 // Append the category container to the main container
                 productAllCategory.appendChild(categoryContainer);
+
             });
         } else {
             console.log('Categories is not an array:', data.categories);
@@ -125,3 +150,54 @@ async function catagoryProductsItem() {
 
 // Call the function to load categories and products
 catagoryProductsItem();
+
+//This function I create for the open new page the particular one category which contains multiple type of items ...
+
+
+
+
+
+// Event Delegation on the productAllCategory Container
+// Select the parent container
+const productAllCategoryContainer = document.getElementById("productAllCategory");
+
+// Add an event listener to the parent container
+productAllCategoryContainer.addEventListener("click", function (event) {
+    // Check if the clicked element or any of its ancestors has the class "category-container-heading"
+    const categoryHeading = event.target.closest(".category-container-heading");
+
+    // If the element or its ancestors has the "category-container-heading" class
+    if (categoryHeading) {
+
+        const parentCategoryContainer = categoryHeading.closest(".category-container");
+        
+        if (parentCategoryContainer) {
+    
+            let parentCategoryId = parentCategoryContainer.id;
+            openNewCategoryPage(parentCategoryId);
+        }
+
+    } else {
+        // If the click didn't match the expected element
+        console.log("Clicked outside of category container heading.");
+    }
+});
+
+
+
+
+
+
+
+// Function to open the subcategories page and pass the parent category ID
+function openNewCategoryPage(parentCategoryId) {
+    console.log("categoryItems object in the openNewCategoryPage:", parentCategoryId);
+
+    // Construct the URL with the parentCategoryId as a query parameter
+    const url = `subcategories.html?categoryId=${parentCategoryId}`;
+    
+    // Redirect the user to the subcategories page
+    window.location.href = url;
+}
+
+

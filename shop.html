@@ -18,6 +18,13 @@
 
 <style>
     /* Product Item Hover Effects */
+
+    .subcategory-container{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px;
+    }
+
     .cata-product-item {
         cursor: pointer;
         border: 1.05px solid transparent;
@@ -44,7 +51,8 @@
 
     /* Category Heading Section */
     .category-container-heading {
-        padding: 10px;
+        /* background-color: #dd4b39; */
+        /* padding: 10px 0px; */
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -52,7 +60,7 @@
 
     .category-title {
         margin-bottom: 0;
-        padding: 10px 15px;
+        padding: 10px 0px;
         font-weight: 600;
     }
 
@@ -66,7 +74,7 @@
     .product-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        gap: 5px;
         background-color: #F1F2F4;
     }
 
@@ -74,7 +82,6 @@
     .product-item {
         padding: 10px;
         background-color: white;
-        margin-top: 15px;
         border-radius: 4px;
         border: 1px solid #e0e0e0;
     }
@@ -96,7 +103,7 @@
 
     /* Product Name Style */
     .product-name {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 600;
     }
 
@@ -109,19 +116,20 @@
 
     /* Subcategory Styling */
     .subcategory-container {
-        margin-bottom: 20px;
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
 
     .subcategory-title {
         font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 10px;
+        font-weight: 500;
+        margin-bottom: 2px;
     }
 
     .subcategory-description {
-        font-size: 16px;
+        font-size: 14px;
         color: #777;
-        margin-bottom: 15px;
+        margin-bottom: 5px;
     }
 </style>
 
@@ -167,9 +175,9 @@
             <!--  -->
 
             <h1 class="heading_shop">Products</h1>
-            <div class="main-container">
+            <!-- <div class="main-container">
                 <div class="renderData"></div>
-            </div>
+            </div> -->
 
             <div id="productAllCategory" style="background-color: white; padding: 2% 4%;">
             </div>
